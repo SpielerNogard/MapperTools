@@ -1,0 +1,98 @@
+{
+    "192.168.44.25": {
+        "type": "MAD",
+        "Pogo": "0.241.1",
+        "PogoDroid": "33.3.86",
+        "Architecture": "arm64-v8a"
+    },
+    "192.168.44.26": {
+        "type": "MAD",
+        "Pogo": "0.241.1",
+        "PogoDroid": "33.3.86",
+        "Architecture": "arm64-v8a"
+    },
+    "192.168.44.27": {
+        "type": "Atlas",
+        "Pogo": "0.237.0",
+        "Atlas": "22052602",
+        "Architecture": "arm64-v8a",
+        "DeviceName": "RDM6"
+    },
+    "192.168.44.28": {
+        "type": "MAD",
+        "Pogo": "0.241.1",
+        "PogoDroid": "33.3.86",
+        "Architecture": "arm64-v8a"
+    },
+    "192.168.44.29": {
+        "type": "Atlas",
+        "Pogo": "0.237.0",
+        "Atlas": "22052602",
+        "Architecture": "arm64-v8a",
+        "DeviceName": "RDM3"
+    },
+    "192.168.44.30": {
+        "type": "MAD",
+        "Pogo": "0.241.1",
+        "PogoDroid": "33.3.86",
+        "Architecture": "arm64-v8a"
+    },
+    "192.168.44.31": {
+        "type": "MAD",
+        "Pogo": "0.241.1",
+        "PogoDroid": "33.3.86",
+        "Architecture": "arm64-v8a"
+    },
+    "192.168.44.32": {
+        "type": "Atlas",
+        "Pogo": "0.237.0",
+        "Atlas": "22052602",
+        "Architecture": "arm64-v8a",
+        "DeviceName": "RDM5"
+    },
+    "192.168.44.33": {
+        "type": "MAD",
+        "Pogo": "0.241.1",
+        "PogoDroid": "33.3.86",
+        "Architecture": "arm64-v8a"
+    },
+    "192.168.44.34": {
+        "type": "MAD",
+        "Pogo": "0.241.1",
+        "PogoDroid": "33.3.86",
+        "Architecture": "arm64-v8a"
+    },
+    "192.168.44.35": {
+        "type": "MAD",
+        "Pogo": "0.241.1",
+        "PogoDroid": "33.3.86",
+        "Architecture": "arm64-v8a"
+    },
+    "192.168.44.36": {
+        "type": "MAD",
+        "Pogo": "0.241.1",
+        "PogoDroid": "33.3.86",
+        "Architecture": "arm64-v8a"
+    },
+    "192.168.44.37": {
+        "type": "Atlas",
+        "Pogo": "0.237.0",
+        "Atlas": "22052602",
+        "Architecture": "arm64-v8a",
+        "DeviceName": "RDM4"
+    },
+    "192.168.44.46": {
+        "type": "Atlas",
+        "Pogo": "0.237.0",
+        "Atlas": "22052602",
+        "Architecture": "arm64-v8a",
+        "DeviceName": "RDM1"
+    },
+    "192.168.44.50": {
+        "type": "Atlas",
+        "Pogo": "0.237.0",
+        "Atlas": "22052602",
+        "Architecture": "arm64-v8a",
+        "DeviceName": "RDM2"
+    }
+}
