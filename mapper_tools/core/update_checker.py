@@ -81,6 +81,6 @@ if __name__ == "__main__":
     from mapper_tools.devices.atlas import AtlasDevice
 
     AtlasLogger()
-    device = AtlasDevice(ip="192.168.44.27")
+    device = AtlasDevice(ip="192.168.44.29")
     checker = UpdateChecker()
     checker.check_devices(devices=[device])
