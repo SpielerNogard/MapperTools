@@ -22,6 +22,10 @@ class Device:
         self._stats["arch"] = self._arch
         return self._stats
 
+    @property
+    def name(self):
+        return self._stats.get("DeviceName", self._stats.get("IP", "0.0.0.0"))
+
     def _load_device(self) -> None:
         with open("devices.json") as device_stats:
             content = json.load(device_stats)
@@ -158,7 +162,11 @@ class Device:
             includes the keys `type` and `Architecture`.
         """
         logger.info(f"building status for {self._ip}")
-        status = {"type": self._type, "Architecture": self.get_arch()}
+        status = {
+            "type": self._type,
+            "Architecture": self.get_arch(),
+            "IP": self._ip,
+        }
         self._status = status
         return status
 

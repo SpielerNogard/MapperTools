@@ -18,6 +18,7 @@ class MADDevice(Device):
             "PogoDroid": self.get_software_version("com.mad.pogodroid"),
             "Architecture": self.get_arch(),
             "Status": self._state,
+            "IP": self._ip,
         }
         self._status = status
         return status

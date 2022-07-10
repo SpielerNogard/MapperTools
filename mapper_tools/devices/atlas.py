@@ -1,3 +1,4 @@
+import os
 from mapper_tools.devices.device import Device
 import logging
 import json
@@ -20,6 +21,7 @@ class AtlasDevice(Device):
             "Architecture": self.get_arch(),
             "DeviceName": self.get_device_name(),
             "Status": self._state,
+            "IP": self._ip,
         }
         self._status = status
         return status
@@ -31,7 +33,7 @@ class AtlasDevice(Device):
         )
         with open("atlas_config.json") as json_file:
             content = json.load(json_file)
-
+        os.remove("atlas_config.json")
         return content.get("deviceName")
 
     def reset(self):

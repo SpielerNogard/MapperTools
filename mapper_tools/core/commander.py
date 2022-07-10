@@ -1,15 +1,12 @@
-import os
-from posixpath import split
 from sys import platform
-import subprocess
+
 import logging
-from threading import local
-from tokenize import Triple
+
 import mapper_tools.core.errors as errors
+from mapper_tools.core.update_checker import UpdateChecker
 from mapper_tools.devices.atlas import AtlasDevice
 from mapper_tools.devices.device import Device
 from mapper_tools.devices.mad import MADDevice
-from mapper_tools.logging.atlas_logger import AtlasLogger
 from shutil import which
 import socket
 import json
@@ -24,9 +21,9 @@ class DeviceCommander:
         self._platform = self._check_platform()
         self._search = search_devices
         self._check_for_adb()
-
         self._ip_range = self._find_ip_range()
         self.check_for_devices()
+        self._update_checker = UpdateChecker()
 
     @staticmethod
     def _check_platform():
