@@ -10,6 +10,7 @@ from mapper_tools.devices.mad import MADDevice
 from shutil import which
 import socket
 import json
+import os
 
 
 logger = logging.getLogger(__name__)
@@ -17,6 +18,9 @@ logger = logging.getLogger(__name__)
 
 class DeviceCommander:
     def __init__(self, search_devices: bool = True):
+        if not os.path.exists("/tmp/MapperTools"):
+            logger.info("creating MapperTools folder")
+            os.mkdir("/tmp/MapperTools")
         self._devices = {}
         self._platform = self._check_platform()
         self._search = search_devices
@@ -86,10 +90,14 @@ class DeviceCommander:
                         status = device.get_status()
                     found_devices[f"{self._ip_range}.{a}"] = status
                     device.disconnect()
-            with open("devices.json", "w") as device_file:
+            with open("/tmp/MapperTools/devices.json", "w") as device_file:
                 device_file.write(json.dumps(found_devices))
         else:
-            with open("devices.json") as device_stats:
+            if not os.path.exists("/tmp/MapperTools/devices.json"):
+                logger.info("cant find devices. Start search")
+                self._search = True
+                self.check_for_devices()
+            with open("/tmp/MapperTools/devices.json") as device_stats:
                 found_devices = json.load(device_stats)
         logger.info(f"{found_devices}")
         self._devices = found_devices

@@ -2,6 +2,8 @@ import json
 import logging
 import subprocess
 from typing import Dict, Any, List, Optional
+import os
+import time
 
 logger = logging.getLogger(__name__)
 
@@ -27,9 +29,12 @@ class Device:
         return self._stats.get("DeviceName", self._stats.get("IP", "0.0.0.0"))
 
     def _load_device(self) -> None:
-        with open("devices.json") as device_stats:
-            content = json.load(device_stats)
-        self._stats = content.get(self._ip, {})
+        if os.path.exists("/tmp/MapperTools/devices.json"):
+            with open("/tmp/MapperTools/devices.json") as device_stats:
+                content = json.load(device_stats)
+            self._stats = content.get(self._ip, {})
+        else:
+            self._stats = {}
         logger.info(f"loaded {self._stats=}")
 
     def adb_command(self, command: str, command_output: bool = True) -> Optional[str]:
@@ -38,6 +43,7 @@ class Device:
             self.connect()
         logger.info(f"using {command=}")
         if command_output:
+
             output = subprocess.check_output(
                 command,
                 shell=True,
